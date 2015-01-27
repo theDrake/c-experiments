@@ -1,5 +1,5 @@
 /******************************************************************************
-filename    array.c
+filename    arrays.c
 author      David C. Drake
 email       david@davidcdrake.com
 

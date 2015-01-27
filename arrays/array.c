@@ -26,13 +26,13 @@ void reverse_array(int a[], int size)
   int index2 = size - 1; /* Array index variable, pointing at last element.  */
   int value1;            /* Temporarily holds an array value to be swapped.  */
   int value2;            /* Temporarily holds an array value to be swapped.  */
-  
+
     /* If the size is 0 or 1 (or negative), no reversing will occur.         */
   if (size < 2)
   {
     return;
   }
-    /* 
+    /*
      * For arrays of size 2 and above, values are reversed by starting at both
      * ends and moving toward the center.
      */
@@ -65,8 +65,8 @@ Description: Adds the elements of two arrays and puts the sum of each pair of
 void add_arrays(const int a[], const int b[], int c[], int size)
 {
   int x;  /* for loop counter */
-  
-    /* 
+
+    /*
      * Each element in array "c" will be the sum of the elements of arrays "a"
      * and "b" at the same index value.
      */
@@ -90,7 +90,7 @@ Description: Multiplies each element of an array by a given value.
 void scalar_multiply(int a[], int size, int multiplier)
 {
   int x;  /* for loop counter */
-  
+
   for (x = 0; x < size; x++)
   {
     a[x] *= multiplier;
@@ -116,12 +116,12 @@ int dot_product(const int a[], const int b[], int size)
 {
   int x;                  /* for loop counter                                */
   int sumOfProducts = 0;  /* To hold the dot product value to be returned.   */
-  
+
   for (x = 0; x < size; x++)
   {
     sumOfProducts += a[x] * b[x];
   }
-  
+
   return sumOfProducts;
 }
 

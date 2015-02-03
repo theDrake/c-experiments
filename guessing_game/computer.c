@@ -27,7 +27,7 @@ int main(int argc, char **argv)
   int lowerBound; /* lower bound deduced through guessing */
   int upperBound; /* upper bound deduced through guessing */
   int tries;      /* number of tries/guesses              */
-  
+
     /* If the user didn't provide any arguments, quit */
   if (argc < 2)
   {
@@ -38,8 +38,8 @@ int main(int argc, char **argv)
   }
 
     /* Convert strings to integers */
-  low  = atoi(argv[1]);  
-  high = atoi(argv[2]); 
+  low  = atoi(argv[1]);
+  high = atoi(argv[2]);
 
   srand((unsigned)time(0));
 

@@ -1,12 +1,10 @@
 /******************************************************************************
-filename numbers.c
-author   David C. Drake
-email    david@davidcdrake.com
+   Filename: numbers.c
 
-Brief Description:
-  Prompts the user for three numbers between 0 and 9.999, then prints their
-  sin, cos, tan, and atan values.
+     Author: David C. Drake (http://davidcdrake.com)
 
+Description: Prompts the user for three numbers between 0 and 9.999, then
+             prints their sin, cos, tan, and atan values.
 ******************************************************************************/
 
 #include <math.h>  /* sin, cos, tan, atan */

@@ -14,9 +14,9 @@ Description: Contains two functions for approximating the value of pi:
 /******************************************************************************
    Function: circle_pi
 
-Description: Given a number of rectangles N, estimate the area of a quarter 
+Description: Given a number of rectangles N, estimate the area of a quarter
              circle by calculating the area of N rectangles that approximate as
-             closely as possible the area of that quarter circle. Use this 
+             closely as possible the area of that quarter circle. Use this
              value to estimate the value of pi/4 (and thereby, pi).
 
      Inputs: rectangles - The number of rectangles to be used in estimating the
@@ -55,7 +55,7 @@ double circle_pi(int rectangles)
 /******************************************************************************
    Function: leibniz_pi
 
-Description: Given a number of iterations N, estimate the value of pi/4 (and 
+Description: Given a number of iterations N, estimate the value of pi/4 (and
              thus also pi) by carrying out N steps of the following pattern:
               1 - 1/3 + 1/5 - 1/7 + 1/9 - 1/11 + ...
 

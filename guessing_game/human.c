@@ -24,7 +24,7 @@ int main(int argc, char **argv)
   int num;   /* computer's chosen number */
   int input; /* user's input             */
   int tries; /* number of tries/guesses  */
-  
+
     /* If the user didn't provide any arguments, quit */
   if (argc < 2)
   {
@@ -33,13 +33,13 @@ int main(int argc, char **argv)
     printf("       high - the upper bound\n\n");
     return -1;
   }
-  
+
     /* Convert strings to integers */
   low  = atoi(argv[1]);
   high = atoi(argv[2]);
-  
+
   srand((unsigned)time(0));
-  
+
   do
   {
     num   = RandomInt(low, high);
@@ -75,6 +75,6 @@ int main(int argc, char **argv)
     scanf("%d", &input);
     myfflush();
   }while(input != 0);
-  
+
   return 0;
 }

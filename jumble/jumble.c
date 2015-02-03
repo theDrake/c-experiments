@@ -1,12 +1,11 @@
 /******************************************************************************
-filename    jumble.c
-author      David C. Drake
-DP email    david@davidcdrake.com
+   Filename: jumble.c
 
-Brief Description:
-  Contains two string-related functions: mystrlen and jumble. The former
-  determines the length of a string, the latter encodes/decodes a string.
+     Author: David C. Drake (http://davidcdrake.com)
 
+Description: Contains two string-related functions: "mystrlen" and "jumble".
+             The former determines the length of a given string, the latter
+             encodes/decodes a given string.
 ******************************************************************************/
 
 #include "jumble.h" /* mystrlen, jumble, ENCODE, DECODE                      */

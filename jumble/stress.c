@@ -1,5 +1,5 @@
 /*
- * "Stress test" function for "jumble.c".
+ * "Stress test" file for "jumble.c".
  */
 
 #include <stdio.h>  /* printf, putchar                  */

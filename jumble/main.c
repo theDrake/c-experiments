@@ -2,7 +2,7 @@
  * Test functions for "jumble.c".
  */
 
- #include <stdio.h>  /* printf                           */
+#include <stdio.h>   /* printf                           */
 #include "jumble.h"  /* mystrlen, jumble, ENCODE, DECODE */
 
 void test0(void)

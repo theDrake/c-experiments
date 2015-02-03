@@ -1,14 +1,11 @@
 /******************************************************************************
-filename palindrome1.c
-author   David C. Drake
-email    david@davidcdrake.com
+   Filename: palindrome1.c
 
-Brief Description:
-  Contains a function for determining whether an array of characters is a
-  palindrome (by means of array subscripting).
+     Author: David C. Drake (http://davidcdrake.com)
 
+Description: Contains a function for determining whether an array of characters
+             is a palindrome (by means of array subscripting).
 ******************************************************************************/
-
 
 /******************************************************************************
    Function: is_palindrome1

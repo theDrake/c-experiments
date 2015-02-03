@@ -1,14 +1,11 @@
-/*******************************************************************************
-filename palindrome2.c
-author   David C. Drake
-email    david@davidcdrake.com
+/******************************************************************************
+   Filename: palindrome2.c
 
-Brief Description:
-  Contains a function for determining whether an array of characters is a
-  palindrome (by means of pointers).
+     Author: David C. Drake (http://davidcdrake.com)
 
-*******************************************************************************/
-
+Description: Contains a function for determining whether an array of characters
+             is a palindrome (by means of pointers).
+******************************************************************************/
 
 /******************************************************************************
    Function: is_palindrome2

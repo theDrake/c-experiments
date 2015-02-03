@@ -1,13 +1,11 @@
 /******************************************************************************
-filename    arrays.c
-author      David C. Drake
-email       david@davidcdrake.com
+   Filename: arrays.c
 
-Brief Description:
-  Contains functions for reversing an array, adding two arrays, performing
-  scalar multiplication on an array, calculating the dot product of two
-  arrays, and calculating the cross product of two arrays of size 3.
+     Author: David C. Drake (http://davidcdrake.com)
 
+Description: Contains five functions that use and/or modify arrays, including
+             "reverse_array", "add_arrays", "scalar_multiply", "dot_product",
+             and "cross_product".
 ******************************************************************************/
 
 /******************************************************************************

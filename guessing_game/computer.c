@@ -65,7 +65,7 @@ int main(int argc, char **argv)
     do
     {
       guess = (upperBound - lowerBound) / 2 + lowerBound;
-      printf("Is the number %d? (1=too low, 2=too high, 3=correct, 0=quit)",
+      printf("Is the number %d? (1=too low, 2=too high, 3=correct, 0=quit) ",
              guess);
       tries++;
       do
@@ -106,7 +106,7 @@ int main(int argc, char **argv)
       printf("guess!\n");
     else
       printf("guesses!\n");
-    printf("Play again? (1=yes, 0=no): ");
+    printf("Play again? (1=yes, 0=no) ");
     scanf("%d", &input);
     myfflush();
   }while(input != 0);

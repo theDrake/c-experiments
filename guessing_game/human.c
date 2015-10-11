@@ -31,6 +31,7 @@ int main(int argc, char **argv)
     printf("Usage: %s low high\n", argv[0]);
     printf("       low  - the lower bound\n");
     printf("       high - the upper bound\n\n");
+
     return -1;
   }
 

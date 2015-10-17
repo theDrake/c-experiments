@@ -36,7 +36,7 @@ int main(int argc, char **argv) {
     printf("       low  - the lower bound\n");
     printf("       high - the upper bound\n\n");
 
-    return 1;
+    return -1;
   }
 
   printf("Welcome to the Guessing Game!\n");

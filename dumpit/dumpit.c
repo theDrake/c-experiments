@@ -20,31 +20,26 @@ Description: Given an array of characters, formats the characters as a line of
     Outputs: None. However, the outbuf parameter has been modified for the
              client.
 ******************************************************************************/
-static void format(const char* inbuf, char *outbuf, int count, int start)
-{
-  int i;                    /* for loop variable                             */
-  const char *pIn = inbuf;  /* To read through the input buffer twice.       */
+static void format(const char* inbuf, char *outbuf, int count, int start) {
+  int i;
+  const char *pIn = inbuf;
 
     /* Add the 6-digit file offset in hexadecimal format.                    */
   sprintf(outbuf, "%.6X ", (unsigned int) start);
   outbuf += 7;
 
     /* Add input characters in hexadecimal format.                           */
-  for (i = 0; i < count; i++, pIn++)
-  {
+  for (i = 0; i < count; i++, pIn++) {
     sprintf(outbuf, "%.2X ", (unsigned char) *pIn);
     outbuf += 3;
-    if (i == 7)
-    {
+    if (i == 7) {
       sprintf(outbuf++, " ");  /* Extra space added after the 8th byte.      */
     }
   }
-  for (i = count; i < 16; i++) /* Extra spaces if count < 16.                */
-  {
+  for (i = count; i < 16; i++) { /* Extra spaces if count < 16.              */
     sprintf(outbuf, "   ");
     outbuf += 3;
-    if (i == 7)
-    {
+    if (i == 7) {
       sprintf(outbuf++, " ");
     }
   }
@@ -53,14 +48,10 @@ static void format(const char* inbuf, char *outbuf, int count, int start)
   pIn = inbuf;                 /* Point pIn at the beginning of inbuf again. */
 
     /* Add input characters again, this time in ASCII format.                */
-  for (i = 0; i < count; i++, pIn++)
-  {
-    if (*pIn < MIN_ASCII || *pIn > MAX_ASCII)
-    {
+  for (i = 0; i < count; i++, pIn++) {
+    if (*pIn < MIN_ASCII || *pIn > MAX_ASCII) {
       sprintf(outbuf++, ".");
-    }
-    else
-    {
+    } else {
       sprintf(outbuf++, "%c", *pIn);
     }
   }
@@ -76,23 +67,20 @@ Description: Given the name of a file, formats each 16 bytes of that file as a
 
     Outputs: None.
 ******************************************************************************/
-void dump(const char *filename)
-{
-  FILE *infile;         /* File pointer for input                    */
+void dump(const char *filename) {
+  FILE *infile;
   char inbuf[16] = {0}; /* Read/format 16 bytes at a time            */
   char outbuf[75];      /* The longest formatted string              */
-  int bytes      = 0;   /* Number of bytes read in one call of fread */
+  int bytes = 0;        /* Number of bytes read in one call of fread */
   int totalBytes = 0;   /* Total number of bytes read from the file  */
 
   infile = fopen(filename, "rb");
-  if (infile == NULL)
-  {
+  if (infile == NULL) {
     return;
   }
   printf("%s:\n", filename);
 
-  while (!feof(infile))
-  {
+  while (!feof(infile)) {
     bytes = fread(inbuf, 1, 16, infile);
     format(inbuf, outbuf, bytes, totalBytes);
     printf("%s\n", outbuf);

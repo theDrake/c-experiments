@@ -5,8 +5,7 @@
 #include <stdio.h>   /* printf                           */
 #include "jumble.h"  /* mystrlen, jumble, ENCODE, DECODE */
 
-void test0(void)
-{
+void test0(void) {
   int length;
   unsigned char a[] = "a";
   unsigned char b[] = "abcd";
@@ -30,9 +29,8 @@ void test0(void)
   printf("length of d is %i\n", length);
 }
 
-void test1(void)
-{
-  unsigned char phrase[]   = "THIS IS A SECRET.";
+void test1(void) {
+  unsigned char phrase[] = "THIS IS A SECRET.";
   unsigned char password[] = "$#*!";
 
   printf("\nTest1 ======================================\n");
@@ -44,9 +42,8 @@ void test1(void)
   printf("%s\n", phrase);
 }
 
-void test2(void)
-{
-  unsigned char phrase[]   = "xkstDl}AeC}fguouR";
+void test2(void) {
+  unsigned char phrase[] = "xkstDl}AeC}fguouR";
   unsigned char password[] = "$#*!";
 
   printf("\nTest2 ======================================\n");
@@ -58,9 +55,8 @@ void test2(void)
   printf("%s\n", phrase);
 }
 
-void test3(void)
-{
-  unsigned char phrase[]   = "This is a secret.";
+void test3(void) {
+  unsigned char phrase[] = "This is a secret.";
   unsigned char password[] = {1, 0};
 
   printf("\nTest3 ======================================\n");
@@ -72,9 +68,8 @@ void test3(void)
   printf("%s\n", phrase);
 }
 
-void test4(void)
-{
-  unsigned char phrase[]   = "Uijt!jt!b!tfdsfu/";
+void test4(void) {
+  unsigned char phrase[] = "Uijt!jt!b!tfdsfu/";
   unsigned char password[] = {1, 0};
 
   printf("\nTest4 ======================================\n");
@@ -86,9 +81,8 @@ void test4(void)
   printf("%s\n", phrase);
 }
 
-void test5(void)
-{
-  unsigned char phrase[]   = "ABCDEFG";
+void test5(void) {
+  unsigned char phrase[] = "ABCDEFG";
   unsigned char password[] = {1, 2, 3, 0};
 
   printf("\nTest5 ======================================\n");
@@ -104,9 +98,8 @@ void test5(void)
   printf("%s\n", phrase);
 }
 
-void test6(void)
-{
-  unsigned char phrase[]   = "ABCDEFG";
+void test6(void) {
+  unsigned char phrase[] = "ABCDEFG";
   unsigned char password[] = {1, 2, 3, 0};
 
   printf("\nTest6 ======================================\n");
@@ -130,9 +123,8 @@ void test6(void)
   printf("%s\n", phrase);
 }
 
-void test7(void)
-{
-  unsigned char phrase[]   = "This is a secret.";
+void test7(void) {
+  unsigned char phrase[] = "This is a secret.";
   unsigned char password[] = {1, 0};
 
   printf("\nTest7 ======================================\n");
@@ -148,12 +140,11 @@ void test7(void)
   printf("%s\n", phrase);
 }
 
-void test8(void)
-{
-  unsigned char phrase[]   = "Four score and seven years ago our fathers "
-                             "brought forth on this continent a new nation, "
-                             "conceived in liberty and dedicated to the "
-                             "proposition that all men are created equal.";
+void test8(void) {
+  unsigned char phrase[] = "Four score and seven years ago our fathers "
+                           "brought forth on this continent a new nation, "
+                           "conceived in liberty and dedicated to the "
+                           "proposition that all men are created equal.";
   unsigned char password[] = {1, 0};
 
   printf("\nTest8 ======================================\n");
@@ -169,12 +160,11 @@ void test8(void)
   printf("%s\n", phrase);
 }
 
-void test9(void)
-{
-  unsigned char phrase[]  = "Four score and seven years ago our fathers "
-                            "brought forth on this continent a new nation, "
-                            "conceived in liberty and dedicated to the "
-                            "proposition that all men are created equal.";
+void test9(void) {
+  unsigned char phrase[] = "Four score and seven years ago our fathers "
+                           "brought forth on this continent a new nation, "
+                           "conceived in liberty and dedicated to the "
+                           "proposition that all men are created equal.";
   unsigned char *password = (unsigned char *)"foobar";
 
   printf("\nTest9 ======================================\n");
@@ -190,9 +180,8 @@ void test9(void)
   printf("%s\n", phrase);
 }
 
-void test10(void)
-{
-  unsigned char phrase[]   = "batman";
+void test10(void) {
+  unsigned char phrase[] = "batman";
   unsigned char password[] = "cave";
 
   printf("\nTest10 ======================================\n");
@@ -208,12 +197,10 @@ void test10(void)
   printf("%s\n", phrase);
 }
 
-int main(void)
-{
+int main(void) {
   int test = -1;
 
-  switch (test)
-  {
+  switch (test) {
     case 0:
       test0();
       break;

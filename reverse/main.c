@@ -5,8 +5,7 @@ void inttostr(int number, char string[]);
 void reverse_words1(const char input[], char output[]);
 void reverse_words2(char input[]);
 
-void test1(void)
-{
+void test1(void) {
   printf("%i\n", strtoint("0"));
   printf("%i\n", strtoint("1"));
   printf("%i\n", strtoint("12"));
@@ -20,8 +19,7 @@ void test1(void)
   printf("%i\n", strtoint("-1234567890"));
 }
 
-void test2(void)
-{
+void test2(void) {
   char buffer[12];
 
   inttostr(1, buffer);
@@ -60,8 +58,7 @@ void test2(void)
 #endif
 }
 
-void test3(void)
-{
+void test3(void) {
   {
   char words1[] = "This";
   char rev1[sizeof(words1) + 1];
@@ -114,8 +111,7 @@ void test3(void)
 #endif
 }
 
-void test4(void)
-{
+void test4(void) {
   {
   char words[] = "This";
   printf(" Input string: |%s|\n", words);
@@ -162,8 +158,7 @@ void test4(void)
 #endif
 }
 
-int main(void)
-{
+int main(void) {
   printf("\n============== Test 1 ================\n");
   test1();
 

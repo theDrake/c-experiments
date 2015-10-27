@@ -1,24 +1,20 @@
 #include <stdio.h> /* printf                                         */
 #include "sieve.h" /* sieve, twin_primes, brun_constant, TRUE, FALSE */
 
-#define SIZE 10001 /* The size of the array        */
+#define SIZE 10001 /* Size of the array */
 
-int main(void)
-{
-  int array[SIZE]; /* The array of 0's and 1's     */
-  int count = 0;   /* Number of primes/twins found */
+int main(void) {
+  int array[SIZE], /* Array of 0's and 1's         */
+      count = 0,   /* Number of primes/twins found */
+      i;           /* For-loop counter             */
   double bruns;    /* Brun's Constant              */
-  int i;           /* Loop counter                 */
 
     /* Mark prime/non-prime numbers using the array  */
   sieve(array, SIZE - 1);
 
     /* Count the number of primes and print each one */
-  for (i = 0; i < SIZE; i++)
-  {
-      /* If TRUE, this marks a prime number */
-    if (array[i] == TRUE)
-    {
+  for (i = 0; i < SIZE; i++) {
+    if (array[i] == TRUE) {
       count++;
       printf("Prime #%04i:  %4i\n", count, i);
     }

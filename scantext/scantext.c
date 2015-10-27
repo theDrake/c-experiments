@@ -20,8 +20,7 @@ Description: Determines whether a given character is a whitespace character
 
     Outputs: Returns "true" if the argument is a whitespace character.
 ******************************************************************************/
-static int is_whitespace(const char c)
-{
+static int is_whitespace(const char c) {
   return c == ' ' || c == '\t' || c == '\n' || c == '\r';
 }
 
@@ -37,12 +36,10 @@ Description: Returns the length of a given NULL-terminated string (i.e., the
 
     Outputs: The number of characters in the string.
 ******************************************************************************/
-static int mystrlen(const char *string)
-{
+static int mystrlen(const char *string) {
   int length = 0;
 
-  while (*string++)
-  {
+  while (*string++) {
     length++;
   }
 
@@ -71,19 +68,14 @@ Description: Calculates a string's actual length (the number of characters in
 void calculate_lengths(const char *string,
                        int tabsize,
                        int *string_length,
-                       int *display_length)
-{
+                       int *display_length) {
   *string_length  = 0;
   *display_length = 0;
-  while (*string)
-  {
+  while (*string) {
     *string_length++;
-    if (*string++ == '\t')
-    {
+    if (*string++ == '\t') {
       *display_length += tabsize;
-    }
-    else
-    {
+    } else {
       *display_length++;
     }
   }
@@ -100,27 +92,21 @@ Description: Counts the number of words in a given string (where a word is
 
     Outputs: The number of words found in the string.
 ******************************************************************************/
-int count_words(const char *string)
-{
+int count_words(const char *string) {
   int words = 0;
 
-  while (*string)
-  {
-    while (is_whitespace(*string))
-    {
+  while (*string) {
+    while (is_whitespace(*string)) {
       string++;
     }
-    if (*string)
-    {
+    if (*string) {
       words++;
     }
-    do
-    {
-      if (!*string)
-      {
+    do {
+      if (!*string) {
         return words;
       }
-    }while (!is_whitespace(*string++));
+    }while !is_whitespace(*string++);
   }
 
   return words;
@@ -135,14 +121,11 @@ Description: Counts the number of tab characters in a string.
 
     Outputs: The number of tabs found in the string.
 ******************************************************************************/
-int count_tabs(const char *string)
-{
+int count_tabs(const char *string) {
   int tabs = 0;
 
-  while (*string)
-  {
-    if (*string++ == '\t')
-    {
+  while (*string) {
+    if (*string++ == '\t') {
       tabs++;
     }
   }
@@ -162,14 +145,11 @@ Description: Replaces all instances of one character with another in a given
 
     Outputs: The number of substitutions made.
 ******************************************************************************/
-int substitute_char(char *string, char old_char, char new_char)
-{
+int substitute_char(char *string, char old_char, char new_char) {
   int substitutions = 0;
 
-  while (*string)
-  {
-    if (*string == old_char)
-    {
+  while (*string) {
+    if (*string == old_char) {
       *string = new_char;
       substitutions++;
     }

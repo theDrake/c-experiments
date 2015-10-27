@@ -6,9 +6,9 @@
   /* count_tabs, calculate_lengths, subsitute_chars, word_count */
 #include "scantext.h"
 
-int mystrlen(const char *string)
-{
+int mystrlen(const char *string) {
   int length = 0;
+
   while (*string++)
     length++;
   printf("This should not be called.\n");
@@ -16,8 +16,7 @@ int mystrlen(const char *string)
   return length;
 }
 
-static void test1(void)
-{
+static void test1(void) {
   char string[] = "This\tstring\thas\tfive\twords.";
   int tabs;
 
@@ -27,12 +26,9 @@ static void test1(void)
   printf("Number of tabs is %i.\n", tabs);
 }
 
-static void test2(void)
-{
+static void test2(void) {
   char string[] = "This\tstring\thas\tfive\twords.";
-  int char_count;
-  int print_length;
-  int tabsize = 2;
+  int char_count, print_length, tabsize = 2;
 
   calculate_lengths(string, tabsize, &char_count, &print_length);
 
@@ -62,14 +58,9 @@ static void test2(void)
          print_length);
 }
 
-static void test3(void)
-{
+static void test3(void) {
   char string[] = "This\tstring\thas\tfive\twords.";
-  int count;
-  int tabs;
-  int tabsize;
-  int char_count;
-  int print_length;
+  int count, tabs, tabsize, char_count, print_length;
 
   printf("\n== test3 =====================================================\n");
   printf("|%s|\n", string);
@@ -97,14 +88,9 @@ static void test3(void)
          print_length);
 }
 
-static void test4(void)
-{
+static void test4(void) {
   char string[] = "\t\t\t\t\t\t";
-  int count;
-  int tabs;
-  int tabsize;
-  int char_count;
-  int print_length;
+  int count, tabs, tabsize, char_count, print_length;
 
   printf("\n== test4 =====================================================\n");
   printf("|%s|\n", string);
@@ -133,8 +119,7 @@ static void test4(void)
 }
 
 
-static void test5(void)
-{
+static void test5(void) {
   char string[] = "This is a simple string.";
   int count;
 
@@ -144,8 +129,7 @@ static void test5(void)
   printf("Word count is %2i\n", count);
 }
 
-static void test6(void)
-{
+static void test6(void) {
   char string[] = "These\twords\tare\tseparated\tby\ttabs.";
   int count;
 
@@ -155,8 +139,7 @@ static void test6(void)
   printf("Word count is %2i\n", count);
 }
 
-static void test7(void)
-{
+static void test7(void) {
   char string[] = "  This string has leading and trailing spaces.  ";
   int count;
 
@@ -166,8 +149,7 @@ static void test7(void)
   printf("Word count is %2i\n", count);
 }
 
-static void test8(void)
-{
+static void test8(void) {
   char string[] = "  \t This\t  string  \t \t\t  has \t  \tfive\t\n  words.\n";
   int count;
 
@@ -178,8 +160,7 @@ static void test8(void)
   printf("Number of tabs is %i\n", count_tabs(string));
 }
 
-static void test9(void)
-{
+static void test9(void) {
   char string[] = "  \t This\t  string\n  \t \t\t  has\n \t\n  \t\"more\" than"
                   " five \n\t\n  words.\n\n";
   int count;
@@ -191,18 +172,12 @@ static void test9(void)
   printf("Number of tabs is %i\n", count_tabs(string));
 }
 
-static void test10(void)
-{
+static void test10(void) {
   char string[] = "Four\nscore\tand\nseven\t"
                   "years\nago\nour fathers\tbrought\n"
                   "forth\ton\nthis\ncontinent a\n"
                   "new\tnation.";
-
-  int count;
-  int tabs;
-  int tabsize;
-  int char_count;
-  int print_length;
+  int count, tabs, tabsize, char_count, print_length;
 
   printf("\n== test10 ====================================================\n");
   printf("|%s|\n", string);
@@ -231,8 +206,7 @@ static void test10(void)
 }
 
 
-int main(void)
-{
+int main(void) {
   test1();
   test2();
   test3();
@@ -243,5 +217,6 @@ int main(void)
   test8();
   test9();
   test10();
+
   return 0;
 }

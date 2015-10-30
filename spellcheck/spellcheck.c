@@ -24,14 +24,11 @@ Description: Converts all lowercase letters in a given string to uppercase.
 
     Outputs: Pointer to the modified string.
 ******************************************************************************/
-char *mystrupr(char *string)
-{
+char *mystrupr(char *string) {
   char *c;
 
-  for (c = string; *c != '\0'; c++)
-  {
-    if (*c >= 'a' && *c <= 'z')
-    {
+  for (c = string; *c != '\0'; c++) {
+    if (*c >= 'a' && *c <= 'z') {
       *c += ('A' - 'a');
     }
   }
@@ -51,37 +48,29 @@ Description: Counts the number of words that start with a given letter within
     Outputs: The number of words that start with "letter" (or FILE_ERR_OPEN if
              the dictionary can't be opened).
 ******************************************************************************/
-int words_starting_with(const char *dictionary, char letter)
-{
-  int wordCount = 0;             /* Number of words starting with "letter".  */
-  char buffer[LONGEST_WORD + 2]; /* To hold each word from the dictionary.   */
-  FILE *infile;                  /* To open and read from the dictionary.    */
+int words_starting_with(const char *dictionary, char letter) {
+  int wordCount = 0;
+  char buffer[LONGEST_WORD + 2];
+  FILE *infile;
 
-  if (letter >= 'a' && letter <= 'z')
-  {
+  if (letter >= 'a' && letter <= 'z') {
     letter += ('A' - 'a');
   }
 
   infile = fopen(dictionary, "rt");
-  if (infile != NULL)
-  {
-    while (!feof(infile))
-    {
+  if (infile != NULL) {
+    while (!feof(infile)) {
       fgets(buffer, LONGEST_WORD + 1, infile); /* Read in the next word.     */
       mystrupr(buffer);
-      if (buffer[0] == letter)
-      {
+      if (buffer[0] == letter) {
         wordCount++;      /* Word starting with "letter" found.              */
       }
-      else if (buffer[0] > letter)
-      {
+      else if (buffer[0] > letter) {
         break;            /* Stop searching (assumes alphabetical ordering). */
       }
     }
     fclose(infile);
-  }
-  else
-  {
+  } else {
     return FILE_ERR_OPEN;
   }
 
@@ -103,40 +92,29 @@ Description: Given the filename of a dictionary, counts the number of words of
 
     Outputs: FILE_OK, or FILE_ERR_OPEN if the file can't be opened.
 ******************************************************************************/
-int word_lengths(const char *dictionary, int lengths[], int count)
-{
-  int i;                         /* for loop variable                        */
-  int wordLength;                /* To hold the length of each word read.    */
-  char buffer[LONGEST_WORD + 2]; /* To hold each word from the dictionary.   */
-  FILE *infile;                  /* To open and read from the dictionary.    */
+int word_lengths(const char *dictionary, int lengths[], int count) {
+  int i, wordLength;
+  char buffer[LONGEST_WORD + 2];
+  FILE *infile;
 
-    /* Clear all values in the array from 0 to "count", inclusive.           */
-  for (i = 0; i <= count; i++)
-  {
+  for (i = 0; i <= count; i++) {
     lengths[i] = 0;
   }
-
   infile = fopen(dictionary, "rt");
-  if (infile != NULL)
-  {
-    while (!feof(infile))
-    {
+  if (infile != NULL) {
+    while (!feof(infile)) {
       fgets(buffer, LONGEST_WORD + 1, infile); /* Read in the next word.     */
       wordLength = strlen(buffer);
-      if (!feof(infile))
-      {
+      if (!feof(infile)) {
         buffer[wordLength - 1] = '\0';         /* Replace '\n' with NULL.    */
         wordLength--;
-        if (wordLength <= count)
-        {
+        if (wordLength <= count) {
           lengths[wordLength]++;
         }
       }
     }
     fclose(infile);
-  }
-  else
-  {
+  } else {
     return FILE_ERR_OPEN;
   }
 
@@ -157,34 +135,24 @@ Description: Provides some basic information about a given dictionary file via
     Outputs: FILE_OK, or FILE_ERR_OPEN if the file can't be opened. (Also
              provides output via three out parameters.)
 ******************************************************************************/
-int info(const char *dictionary, int *shortest, int *longest, int *num_words)
-{
-  int wordLength;                /* To hold the length of each word read.    */
-  int wordCount = 0;             /* Number of words read from dictionary.    */
-  char buffer[LONGEST_WORD + 2]; /* To hold each word from the dictionary.   */
-  FILE *infile;                  /* To open and read from the dictionary.    */
+int info(const char *dictionary, int *shortest, int *longest, int *num_words) {
+  int wordLength, wordCount = 0;
+  char buffer[LONGEST_WORD + 2];
+  FILE *infile;
 
-    /* Initialize the out parameters.                                        */
   *shortest = LONGEST_WORD + 1;
-  *longest  = 0;
-
+  *longest = 0;
   infile = fopen(dictionary, "rt");
-  if (infile != NULL)
-  {
-    while (!feof(infile))
-    {
+  if (infile != NULL) {
+    while (!feof(infile)) {
       fgets(buffer, LONGEST_WORD + 1, infile); /* Read in the next word.     */
       wordLength = strlen(buffer);
-      if (!feof(infile))
-      {
+      if (!feof(infile)) {
         buffer[wordLength - 1] = '\0';         /* Replace '\n' with NULL.    */
         wordLength--;
-        if (wordLength < *shortest && wordLength > 0)
-        {
+        if (wordLength < *shortest && wordLength > 0) {
           *shortest = wordLength;
-        }
-        else if (wordLength > *longest)
-        {
+        } else if (wordLength > *longest) {
           *longest = wordLength;
         }
         wordCount++;
@@ -192,9 +160,7 @@ int info(const char *dictionary, int *shortest, int *longest, int *num_words)
     }
     *num_words = wordCount;
     fclose(infile);
-  }
-  else
-  {
+  } else {
     return FILE_ERR_OPEN;
   }
 
@@ -213,39 +179,31 @@ Description: Looks for a given word in a dictionary indicated by a given
     Outputs: WORD_OK if the word is found, WORD_BAD if the word is not found,
              or FILE_ERR_OPEN if the dictionary can't be opened.
 ******************************************************************************/
-int spell_check(const char *dictionary, const char *word)
-{
-  char buffer[LONGEST_WORD + 2];    /* To hold each word from the file.      */
-  char upperWord[LONGEST_WORD + 2]; /* To hold UPPERCASE version of "word".  */
-  int wordLength;                   /* To hold the length of each word read. */
-  FILE *infile;                     /* To open and read from the dictionary. */
+int spell_check(const char *dictionary, const char *word) {
+  char buffer[LONGEST_WORD + 2], upperWord[LONGEST_WORD + 2];
+  int wordLength;
+  FILE *infile;
 
   strcpy(upperWord, word);
   mystrupr(upperWord);
   infile = fopen(dictionary, "rt");
-  if (infile != NULL)
-  {
-    while (!feof(infile))
-    {
+  if (infile != NULL) {
+    while (!feof(infile)) {
       fgets(buffer, LONGEST_WORD + 1, infile); /* Read in the next word.     */
       wordLength = strlen(buffer);
       buffer[wordLength - 1] = '\0';           /* Replace '\n' with NULL.    */
       wordLength--;
-      if (strcmp(mystrupr(buffer), upperWord) == 0)
-      {
+      if (strcmp(mystrupr(buffer), upperWord) == 0) {
         fclose(infile);
 
         return WORD_OK;   /* The word has been found.                        */
       }
-      if (buffer[0] > upperWord[0])
-      {
+      if (buffer[0] > upperWord[0]) {
         break;            /* Stop searching (assumes alphabetical ordering). */
       }
     }
     fclose(infile);
-  }
-  else
-  {
+  } else {
     return FILE_ERR_OPEN;
   }
 

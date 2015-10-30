@@ -5,18 +5,16 @@
   /* FILE_OK, FILE_ERR_OPEN, WORD_OK, WORD_BAD, LONGEST_WORD  */
 #include "spellcheck.h"
 
-void test1(void)
-{
-  int i;
+void test1(void) {
+  int i, num_words;
   const char *words[] = {"Four", "score", "and", "seven", "years", "ago",
                          "our", "fathers", "brought", "forth", "on", "this",
                          "continent", "a", "new", "NATION", "fast123",
                          "123  abc", "Hello!!", "", "*&^%$#8UPPERlower"};
-  int num_words       = sizeof(words) / sizeof(*words);
 
+  num_words = sizeof(words) / sizeof(*words);
   printf("\nTest1--------------------------------------------------------\n");
-  for (i = 0; i < num_words; i++)
-  {
+  for (i = 0; i < num_words; i++) {
     char buffer[LONGEST_WORD + 1];
     strcpy(buffer, words[i]);
     mystrupr(buffer);
@@ -24,17 +22,12 @@ void test1(void)
   }
 }
 
-void test2(const char *dictionary)
-{
-  int num_words;   /* Number of words in the dictionary    */
-  int longest;     /* Number of chars in the longest words */
-  int shortest;    /* Number of chars in the shortest word */
-  int file_result; /* For file errors                      */
+void test2(const char *dictionary) {
+  int num_words, longest, shortest, file_result;
 
   printf("\nTest2--------------------------------------------------------\n");
   file_result = info(dictionary, &shortest, &longest, &num_words);
-  if (file_result == FILE_ERR_OPEN)
-  {
+  if (file_result == FILE_ERR_OPEN) {
     printf("Can't open %s\n", dictionary);
 
     return;
@@ -45,14 +38,12 @@ void test2(const char *dictionary)
   printf("Longest word: %i letters\n", longest);
 }
 
-void test3(const char *dictionary, char letter)
-{
+void test3(const char *dictionary, char letter) {
   int file_result;
 
   printf("\nTest3--------------------------------------------------------\n");
   file_result = words_starting_with(dictionary, letter);
-  if (file_result == FILE_ERR_OPEN)
-  {
+  if (file_result == FILE_ERR_OPEN) {
     printf("Can't open %s\n", dictionary);
 
     return;
@@ -61,125 +52,99 @@ void test3(const char *dictionary, char letter)
   printf("Number of words starting with %c: %i\n", letter, file_result);
 }
 
-void test4(const char *dictionary, const char *word)
-{
+void test4(const char *dictionary, const char *word) {
   int file_result;
 
   printf("\nTest4--------------------------------------------------------\n");
   file_result = spell_check(dictionary, word);
-  if (file_result == FILE_ERR_OPEN)
-  {
+  if (file_result == FILE_ERR_OPEN) {
     printf("Can't open %s\n", dictionary);
 
     return;
   }
-  if (file_result == WORD_OK)
-  {
+  if (file_result == WORD_OK) {
     printf("The word %s is spelled correctly.\n", word);
-  }
-  else
-  {
+  } else {
     printf("The word %s is misspelled.\n", word);
   }
 }
 
-void test5(void)
-{
-  int i;
-  int file_result;
-  const char *words[]    = {"Four", "score", "and", "seven", "years", "ago",
-                            "our", "fathers", "brought", "forth", "on", "this",
-                            "continent", "a", "new", "nation"};
-  int num_words          = sizeof(words) / sizeof(*words);
-  int num_misspelled     = 0;
-  const char *dictionary = "allwords.txt";
+void test5(void) {
+  int i, file_result, num_words, num_misspelled = 0;
+  const char *dictionary = "allwords.txt",
+             *words[] = {"Four", "score", "and", "seven", "years", "ago",
+                         "our", "fathers", "brought", "forth", "on", "this",
+                         "continent", "a", "new", "nation"};
 
+  num_words = sizeof(words) / sizeof(*words);
   printf("\nTest5--------------------------------------------------------\n");
   printf("Misspelled words: ");
-  for (i = 0; i < num_words; i++)
-  {
+  for (i = 0; i < num_words; i++) {
     file_result = spell_check(dictionary, words[i]);
-    if (file_result == FILE_ERR_OPEN)
-    {
+    if (file_result == FILE_ERR_OPEN) {
       printf("Can't open %s\n", dictionary);
 
       return;
     }
-    if (file_result == WORD_BAD)
-    {
+    if (file_result == WORD_BAD) {
       printf("%s ", words[i]);
       num_misspelled++;
     }
   }
-  if (!num_misspelled)
-  {
+  if (!num_misspelled) {
     printf("*** None ***");
   }
   printf("\n");
 }
 
-void test6(void)
-{
-  int i;
-  int file_result;
-  const char *words[]    = {"Four", "SCORE", "and", "sevn", "years", "ago",
-                            "ar", "fawthers", "brought", "foarth", "on",
-                            "this", "contnent", "a", "gnu", "nashun"};
-  int num_words          = sizeof(words) / sizeof(*words);
-  int num_misspelled     = 0;
-  const char *dictionary = "allwords.txt";
+void test6(void) {
+  int i, file_result, num_words, num_misspelled = 0;
+  const char *dictionary = "allwords.txt",
+             *words[] = {"Four", "SCORE", "and", "sevn", "years", "ago", "ar",
+                         "fawthers", "brought", "foarth", "on", "this",
+                         "contnent", "a", "gnu", "nashun"};
 
+  num_words = sizeof(words) / sizeof(*words);
   printf("\nTest6--------------------------------------------------------\n");
   printf("Misspelled words: ");
-  for (i = 0; i < num_words; i++)
-  {
+  for (i = 0; i < num_words; i++) {
     file_result = spell_check(dictionary, words[i]);
-    if (file_result == FILE_ERR_OPEN)
-    {
+    if (file_result == FILE_ERR_OPEN) {
       printf("Can't open %s\n", dictionary);
 
       return;
     }
-    if (file_result == WORD_BAD)
-    {
+    if (file_result == WORD_BAD) {
       printf("%s ", words[i]);
       num_misspelled++;
     }
   }
-  if (!num_misspelled)
-  {
+  if (!num_misspelled) {
     printf("*** None ***");
   }
   printf("\n");
 }
 
-void test7(int max_length)
-{
-  int file_result;
-  int length;
-  int lengths[21]        = {0};
-  int total              = 0;
+void test7(int max_length) {
+  int file_result, length, total = 0, lengths[21] = {0};
   const char *dictionary = "allwords.txt";
 
   printf("\nTest7--------------------------------------------------------\n");
   printf("Dictionary: %s\n", dictionary);
   file_result = word_lengths(dictionary, lengths, max_length);
-  if (file_result == FILE_ERR_OPEN)
-  {
+  if (file_result == FILE_ERR_OPEN) {
     printf("Can't open %s\n", dictionary);
 
     return;
   }
-  for (length = 1; length <= max_length; length++)
-  {
+  for (length = 1; length <= max_length; length++) {
     printf("Number of words of length %2i is %6i\n", length, lengths[length]);
     total += lengths[length];
   }
   printf("Total number of words counted: %i\n", total);
 }
 
-int main(void)
-{
+int main(void) {
   test1();
 
   test2("lexicon.txt");

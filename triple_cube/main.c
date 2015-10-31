@@ -1,8 +1,7 @@
 void print_cubes(void);
 void print_pythagorean_triples(int low, int high);
 
-int main(void)
-{
+int main(void) {
     /* Print all of the integers with the cube property */
   print_cubes();
 

@@ -1,12 +1,9 @@
 #include <stdio.h> /* printf */
 
-  /* Prototype from strip.c */
-void strip(const char *filename);
+void strip(const char *filename); /* defined in strip.c */
 
-int main(int argc, char **argv)
-{
-  if (argc < 2)
-  {
+int main(int argc, char **argv) {
+  if (argc < 2) {
     printf("Usage: %s filename\n", argv[0]);
 
     return -1;

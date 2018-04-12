@@ -2,7 +2,7 @@
  * Test file for "scantext.c".
  */
 
-#include <stdio.h>    /* printf */
+#include <stdio.h>  /* printf */
   /* count_tabs, calculate_lengths, subsitute_chars, word_count */
 #include "scantext.h"
 

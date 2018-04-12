@@ -1,6 +1,6 @@
-#include <stdio.h>  /* printf, scanf, getchar */
-#include <stdlib.h> /* rand, srand, atoi      */
-#include <time.h>   /* time                   */
+#include <stdio.h>   /* printf, scanf, getchar */
+#include <stdlib.h>  /* rand, srand, atoi      */
+#include <time.h>    /* time                   */
 
 #define QUIT 0
 #define CONTINUE 1
@@ -22,19 +22,19 @@ int RandomInt(int low, int high) {
 }
 
 int main(int argc, char **argv) {
-  int low,        /* the lower bound                      */
-      high,       /* the upper bound                      */
-      input,      /* user input                           */
-      num,        /* number to be guessed                 */
-      guess,      /* computer's current guess             */
-      lowerBound, /* lower bound deduced through guessing */
-      upperBound, /* upper bound deduced through guessing */
-      tries;      /* number of tries/guesses              */
+  int low,         /* the lower bound                      */
+      high,        /* the upper bound                      */
+      input,       /* user input                           */
+      num,         /* number to be guessed                 */
+      guess,       /* computer's current guess             */
+      lowerBound,  /* lower bound deduced through guessing */
+      upperBound,  /* upper bound deduced through guessing */
+      tries;       /* number of tries/guesses              */
 
   if (argc < 2) {
-    printf("Usage: %s low high\n", argv[0]);
-    printf("       low  - the lower bound\n");
-    printf("       high - the upper bound\n\n");
+    printf("Usage: %s low high\n"
+           "       low  - the lower bound\n"
+           "       high - the upper bound\n\n", argv[0]);
 
     return -1;
   }
@@ -49,9 +49,7 @@ int main(int argc, char **argv) {
     tries = 0;
     do {
       printf("Who shall pick a number? (%d=player, %d=computer, %d=quit) ",
-             PLAYER_CHOOSES_NUMBER,
-             COMPUTER_CHOOSES_NUMBER,
-             QUIT);
+             PLAYER_CHOOSES_NUMBER, COMPUTER_CHOOSES_NUMBER, QUIT);
       scanf("%d", &input);
       FlushInput();
     }while (input != PLAYER_CHOOSES_NUMBER &&
@@ -60,9 +58,7 @@ int main(int argc, char **argv) {
     if (input == PLAYER_CHOOSES_NUMBER) {
       do {
         printf("Pick a number for me to guess (between %d and %d, %d=quit): ",
-               low,
-               high,
-               QUIT);
+               low, high, QUIT);
         scanf("%d", &input);
         FlushInput();
       }while (input != QUIT && (input < low || input > high));
@@ -72,18 +68,11 @@ int main(int argc, char **argv) {
           guess = (upperBound - lowerBound) / 2 + lowerBound;
           tries++;
           printf("Is the number %d? (%d=too low, %d=too high, %d=correct, "
-                   "%d=quit) ",
-                 guess,
-                 TOO_LOW,
-                 TOO_HIGH,
-                 CORRECT,
-                 QUIT);
+                 "%d=quit) ", guess, TOO_LOW, TOO_HIGH, CORRECT, QUIT);
           do {
             scanf("%d", &input);
             FlushInput();
-          }while (input != TOO_LOW &&
-                  input != TOO_HIGH &&
-                  input != CORRECT &&
+          }while (input != TOO_LOW && input != TOO_HIGH && input != CORRECT &&
                   input != QUIT);
           switch (input) {
             case TOO_LOW:
@@ -109,45 +98,42 @@ int main(int argc, char **argv) {
           }
         }while (guess != num && input != QUIT);
       }
-      if (input != QUIT)
-      {
+      if (input != QUIT) {
         printf("I guessed your number in %d ", tries);
-        if (tries == 1)
+        if (tries == 1) {
           printf("guess!\n");
-        else
+        } else {
           printf("guesses!\n");
+        }
       }
     } else if (input == COMPUTER_CHOOSES_NUMBER) {
       num = RandomInt(low, high);
-      printf("Guess the number I'm thinking of (between %d and %d, "
-               "%d=quit): ",
-             low,
-             high,
-             QUIT);
+      printf("Guess the number I'm thinking of (between %d and %d, %d=quit): ",
+             low, high, QUIT);
       scanf("%d", &input);
       FlushInput();
       tries++;
       while (input != num && input != QUIT) {
-        if (input < num)
+        if (input < num) {
           printf ("Too low. ");
-        else
+        } else {
           printf ("Too high. ");
+        }
         printf ("Guess again: ");
         scanf("%d", &input);
         FlushInput();
         tries++;
       }
-      if (input != QUIT)
-      {
+      if (input != QUIT) {
         printf("You guessed the number in %d ", tries);
-        if (tries == 1)
+        if (tries == 1) {
           printf("try!\n");
-        else
+        } else {
           printf("tries!\n");
+        }
       }
     }
-    if (input != QUIT)
-    {
+    if (input != QUIT) {
       printf("Play again? (%d=yes, %d=no) ", CONTINUE, QUIT);
       scanf("%d", &input);
       FlushInput();

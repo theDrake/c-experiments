@@ -6,8 +6,9 @@ int is_palindrome2(const char *phrase, int length);
 void print_array(const char a[], int size) {
   int i;
 
-  for (i = 0; i < size; i++)
+  for (i = 0; i < size; i++) {
     printf("%c", a[i]);
+  }
 }
 
 void test_palindrome(const char sentence[], int length, int which_one) {

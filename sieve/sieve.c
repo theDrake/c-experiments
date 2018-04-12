@@ -1,11 +1,10 @@
-#include <stdio.h> /* printf      */
-#include <math.h>  /* sqrt        */
-#include "sieve.h" /* TRUE, FALSE */
+#include <stdio.h>  /* printf      */
+#include <math.h>   /* sqrt        */
+#include "sieve.h"  /* TRUE, FALSE */
 
 void sieve(int array[], int size) {
   int i, j, squareRootOfSize = sqrt(size);
 
-    /* First, set each element to TRUE. */
   for (i = 0; i <= size; i++) {
     array[i] = TRUE;
   }

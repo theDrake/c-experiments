@@ -1,5 +1,5 @@
-#include <stdio.h>  /* printf                                 */
-#include <string.h> /* strcpy                                 */
+#include <stdio.h>   /* printf */
+#include <string.h>  /* strcpy */
 
   /* check, info, words_starting_with, word_lengths, mystrupr */
   /* FILE_OK, FILE_ERR_OPEN, WORD_OK, WORD_BAD, LONGEST_WORD  */
@@ -29,7 +29,6 @@ void test2(const char *dictionary) {
   file_result = info(dictionary, &shortest, &longest, &num_words);
   if (file_result == FILE_ERR_OPEN) {
     printf("Can't open %s\n", dictionary);
-
     return;
   }
   printf("Dictionary: %s\n", dictionary);
@@ -45,7 +44,6 @@ void test3(const char *dictionary, char letter) {
   file_result = words_starting_with(dictionary, letter);
   if (file_result == FILE_ERR_OPEN) {
     printf("Can't open %s\n", dictionary);
-
     return;
   }
   printf("Dictionary: %s\n", dictionary);
@@ -59,7 +57,6 @@ void test4(const char *dictionary, const char *word) {
   file_result = spell_check(dictionary, word);
   if (file_result == FILE_ERR_OPEN) {
     printf("Can't open %s\n", dictionary);
-
     return;
   }
   if (file_result == WORD_OK) {
@@ -83,7 +80,6 @@ void test5(void) {
     file_result = spell_check(dictionary, words[i]);
     if (file_result == FILE_ERR_OPEN) {
       printf("Can't open %s\n", dictionary);
-
       return;
     }
     if (file_result == WORD_BAD) {
@@ -111,7 +107,6 @@ void test6(void) {
     file_result = spell_check(dictionary, words[i]);
     if (file_result == FILE_ERR_OPEN) {
       printf("Can't open %s\n", dictionary);
-
       return;
     }
     if (file_result == WORD_BAD) {
@@ -134,7 +129,6 @@ void test7(int max_length) {
   file_result = word_lengths(dictionary, lengths, max_length);
   if (file_result == FILE_ERR_OPEN) {
     printf("Can't open %s\n", dictionary);
-
     return;
   }
   for (length = 1; length <= max_length; length++) {

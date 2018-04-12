@@ -1,4 +1,4 @@
-/******************************************************************************
+/*******************************************************************************
    Filename: scantext.c
 
      Author: David C. Drake (http://davidcdrake.com)
@@ -8,9 +8,9 @@ Description: Contains six functions: "is_whitespace", "mystrlen",
              "substitute_char". All are string-related except "is_whitespace",
              which takes a single character as its parameter. The first two
              functions ("is_whitespace" and "mystrlen") are static.
-******************************************************************************/
+*******************************************************************************/
 
-/******************************************************************************
+/*******************************************************************************
    Function: is_whitespace
 
 Description: Determines whether a given character is a whitespace character
@@ -19,12 +19,12 @@ Description: Determines whether a given character is a whitespace character
      Inputs: c - The character of interest.
 
     Outputs: Returns "true" if the argument is a whitespace character.
-******************************************************************************/
+*******************************************************************************/
 static int is_whitespace(const char c) {
   return c == ' ' || c == '\t' || c == '\n' || c == '\r';
 }
 
-/******************************************************************************
+/*******************************************************************************
    Function: mystrlen
 
 Description: Returns the length of a given NULL-terminated string (i.e., the
@@ -35,7 +35,7 @@ Description: Returns the length of a given NULL-terminated string (i.e., the
      Inputs: string - Pointer to the string of interest.
 
     Outputs: The number of characters in the string.
-******************************************************************************/
+*******************************************************************************/
 static int mystrlen(const char *string) {
   int length = 0;
 
@@ -69,7 +69,7 @@ void calculate_lengths(const char *string,
                        int tabsize,
                        int *string_length,
                        int *display_length) {
-  *string_length  = 0;
+  *string_length = 0;
   *display_length = 0;
   while (*string) {
     *string_length++;
@@ -81,7 +81,7 @@ void calculate_lengths(const char *string,
   }
 }
 
-/******************************************************************************
+/*******************************************************************************
    Function: count_words
 
 Description: Counts the number of words in a given string (where a word is
@@ -91,7 +91,7 @@ Description: Counts the number of words in a given string (where a word is
      Inputs: string - Pointer to the string of interest.
 
     Outputs: The number of words found in the string.
-******************************************************************************/
+*******************************************************************************/
 int count_words(const char *string) {
   int words = 0;
 
@@ -112,7 +112,7 @@ int count_words(const char *string) {
   return words;
 }
 
-/******************************************************************************
+/*******************************************************************************
    Function: count_tabs
 
 Description: Counts the number of tab characters in a string.
@@ -120,7 +120,7 @@ Description: Counts the number of tab characters in a string.
      Inputs: string - Pointer to the string of interest.
 
     Outputs: The number of tabs found in the string.
-******************************************************************************/
+*******************************************************************************/
 int count_tabs(const char *string) {
   int tabs = 0;
 
@@ -133,7 +133,7 @@ int count_tabs(const char *string) {
   return tabs;
 }
 
-/******************************************************************************
+/*******************************************************************************
    Function: substitute_char
 
 Description: Replaces all instances of one character with another in a given
@@ -144,7 +144,7 @@ Description: Replaces all instances of one character with another in a given
              new_char - Character to replace each instance of "old_char".
 
     Outputs: The number of substitutions made.
-******************************************************************************/
+*******************************************************************************/
 int substitute_char(char *string, char old_char, char new_char) {
   int substitutions = 0;
 

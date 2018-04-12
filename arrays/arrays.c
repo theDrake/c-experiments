@@ -1,4 +1,4 @@
-/******************************************************************************
+/*******************************************************************************
    Filename: arrays.c
 
      Author: David C. Drake (http://davidcdrake.com)
@@ -6,9 +6,9 @@
 Description: Contains five functions that use and/or modify arrays, including
              "reverse_array", "add_arrays", "scalar_multiply", "dot_product",
              and "cross_product".
-******************************************************************************/
+*******************************************************************************/
 
-/******************************************************************************
+/*******************************************************************************
    Function: reverse_array
 
 Description: Reverses the order of elements in an array.
@@ -17,7 +17,7 @@ Description: Reverses the order of elements in an array.
              size - An integer corresponding to the number of elements in "a".
 
     Outputs: None (but array "a" is modified).
-******************************************************************************/
+*******************************************************************************/
 void reverse_array(int a[], int size) {
   int index1 = 0,
       index2 = size - 1,
@@ -36,7 +36,7 @@ void reverse_array(int a[], int size) {
   }
 }
 
-/******************************************************************************
+/*******************************************************************************
    Function: add_arrays
 
 Description: Adds the elements of two arrays and puts the sum of each pair of
@@ -50,7 +50,7 @@ Description: Adds the elements of two arrays and puts the sum of each pair of
                     array.
 
     Outputs: None (but array "c" is modified).
-******************************************************************************/
+*******************************************************************************/
 void add_arrays(const int a[], const int b[], int c[], int size) {
   int i;
 
@@ -59,7 +59,7 @@ void add_arrays(const int a[], const int b[], int c[], int size) {
   }
 }
 
-/******************************************************************************
+/*******************************************************************************
    Function: scalar_multiply
 
 Description: Multiplies each element of an array by a given value.
@@ -69,7 +69,7 @@ Description: Multiplies each element of an array by a given value.
              multiplier - The integer to be multiplied to each element in "a".
 
     Outputs: None (but array "a" is modified).
-******************************************************************************/
+*******************************************************************************/
 void scalar_multiply(int a[], int size, int multiplier) {
   int i;
 
@@ -78,7 +78,7 @@ void scalar_multiply(int a[], int size, int multiplier) {
   }
 }
 
-/******************************************************************************
+/*******************************************************************************
    Function: dot_product
 
 Description: Returns the scalar (integer) dot product of two vectors (arrays of
@@ -92,10 +92,9 @@ Description: Returns the scalar (integer) dot product of two vectors (arrays of
                     array.
 
     Outputs: The scalar (integer) dot product of the two arrays.
-******************************************************************************/
+*******************************************************************************/
 int dot_product(const int a[], const int b[], int size) {
-  int i;
-  int sumOfProducts = 0;
+  int i, sumOfProducts = 0;
 
   for (i = 0; i < size; i++) {
     sumOfProducts += a[i] * b[i];
@@ -104,7 +103,7 @@ int dot_product(const int a[], const int b[], int size) {
   return sumOfProducts;
 }
 
-/******************************************************************************
+/*******************************************************************************
    Function: cross_product
 
 Description: Takes two vectors (arrays of integers), calculates their cross
@@ -116,7 +115,7 @@ Description: Takes two vectors (arrays of integers), calculates their cross
                  "b").
 
     Outputs: None (but array "c" is modified).
-******************************************************************************/
+*******************************************************************************/
 void cross_product(const int a[], const int b[], int c[]) {
   c[0] = a[1] * b[2] - a[2] * b[1];
   c[1] = a[2] * b[0] - a[0] * b[2];

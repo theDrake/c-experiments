@@ -1,8 +1,8 @@
-#define FILE_OK       -1  /* If a file is opened successfully         */
-#define FILE_ERR_OPEN -2  /* If a file cannot be opened               */
-#define WORD_OK        1  /* If a word is found in the dictionary     */
-#define WORD_BAD       2  /* If a word is not found in the dictionary */
-#define LONGEST_WORD   50 /* Maximum word length                      */
+#define FILE_OK       -1   /* If a file is opened successfully         */
+#define FILE_ERR_OPEN -2   /* If a file cannot be opened               */
+#define WORD_OK        1   /* If a word is found in the dictionary     */
+#define WORD_BAD       2   /* If a word is not found in the dictionary */
+#define LONGEST_WORD   50  /* Maximum word length                      */
 
 char *mystrupr(char *string);
 int info(const char *dictionary, int *shortest, int *longest, int *num_words);

@@ -33,111 +33,92 @@ void test1(void) {
   unsigned char phrase[] = "THIS IS A SECRET.";
   unsigned char password[] = "$#*!";
 
-  printf("\nTest1 ======================================\n");
-  printf("Original phrase:\n");
-  printf("%s\n", phrase);
+  printf("\nTest1 ======================================\n"
+         "Original phrase:\n%s\n", phrase);
   jumble(phrase, password, ENCODE, 1);
 
-  printf("\nEncoded phrase:\n");
-  printf("%s\n", phrase);
+  printf("\nEncoded phrase:\n%s\n", phrase);
 }
 
 void test2(void) {
   unsigned char phrase[] = "xkstDl}AeC}fguouR";
   unsigned char password[] = "$#*!";
 
-  printf("\nTest2 ======================================\n");
-  printf("Encoded phrase:\n");
-  printf("%s\n", phrase);
+  printf("\nTest2 ======================================\n"
+         "Encoded phrase:\n%s\n", phrase);
 
   jumble(phrase, password, DECODE, 1);
-  printf("\nDecoded back:\n");
-  printf("%s\n", phrase);
+  printf("\nDecoded back:\n%s\n", phrase);
 }
 
 void test3(void) {
   unsigned char phrase[] = "This is a secret.";
   unsigned char password[] = {1, 0};
 
-  printf("\nTest3 ======================================\n");
-  printf("Original phrase:\n");
-  printf("%s\n", phrase);
+  printf("\nTest3 ======================================\n"
+         "Original phrase:\n%s\n", phrase);
   jumble(phrase, password, ENCODE, 1);
 
-  printf("\nEncoded phrase:\n");
-  printf("%s\n", phrase);
+  printf("\nEncoded phrase:\n%s\n", phrase);
 }
 
 void test4(void) {
   unsigned char phrase[] = "Uijt!jt!b!tfdsfu/";
   unsigned char password[] = {1, 0};
 
-  printf("\nTest4 ======================================\n");
-  printf("Encoded phrase:\n");
-  printf("%s\n", phrase);
+  printf("\nTest4 ======================================\n"
+         "Encoded phrase:\n%s\n", phrase);
 
   jumble(phrase, password, DECODE, 1);
-  printf("\nDecoded back:\n");
-  printf("%s\n", phrase);
+  printf("\nDecoded back:\n%s\n", phrase);
 }
 
 void test5(void) {
   unsigned char phrase[] = "ABCDEFG";
   unsigned char password[] = {1, 2, 3, 0};
 
-  printf("\nTest5 ======================================\n");
-  printf("Original phrase:\n");
-  printf("%s\n", phrase);
+  printf("\nTest5 ======================================\n"
+         "Original phrase:\n%s\n", phrase);
   jumble(phrase, password, ENCODE, 1);
 
-  printf("\nEncoded phrase:\n");
-  printf("%s\n", phrase);
+  printf("\nEncoded phrase:\n%s\n", phrase);
 
   jumble(phrase, password, DECODE, 1);
-  printf("\nDecoded back:\n");
-  printf("%s\n", phrase);
+  printf("\nDecoded back:\n%s\n", phrase);
 }
 
 void test6(void) {
   unsigned char phrase[] = "ABCDEFG";
   unsigned char password[] = {1, 2, 3, 0};
 
-  printf("\nTest6 ======================================\n");
-  printf("Original phrase:\n");
-  printf("%s\n", phrase);
+  printf("\nTest6 ======================================\n"
+         "Original phrase:\n%s\n", phrase);
   jumble(phrase, password, ENCODE, 1);
 
-  printf("\nEncoded phrase:\n");
-  printf("%s\n", phrase);
+  printf("\nEncoded phrase:\n%s\n", phrase);
 
   jumble(phrase, password, ENCODE, 1);
-  printf("\nEncoded again:\n");
-  printf("%s\n", phrase);
+  printf("\nEncoded again:\n%s\n", phrase);
 
   jumble(phrase, password, DECODE, 1);
-  printf("\nDecoded once:\n");
-  printf("%s\n", phrase);
+  printf("\nDecoded once:\n%s\n", phrase);
 
   jumble(phrase, password, DECODE, 1);
-  printf("\nDecoded twice:\n");
-  printf("%s\n", phrase);
+  printf("\nDecoded twice:\n%s\n", phrase);
 }
 
 void test7(void) {
   unsigned char phrase[] = "This is a secret.";
   unsigned char password[] = {1, 0};
 
-  printf("\nTest7 ======================================\n");
-  printf("Original phrase:\n");
-  printf("%s\n", phrase);
+  printf("\nTest7 ======================================\n"
+         "Original phrase:\n%s\n", phrase);
   jumble(phrase, password, ENCODE, 5);
 
-  printf("\nEncoded phrase:\n");
-  printf("%s\n", phrase);
+  printf("\nEncoded phrase:\n%s\n", phrase);
 
   jumble(phrase, password, DECODE, 5);
-  printf("\nDecoded back:\n");
-  printf("%s\n", phrase);
+  printf("\nDecoded back:\n%s\n", phrase);
 }
 
 void test8(void) {
@@ -147,17 +128,14 @@ void test8(void) {
                            "proposition that all men are created equal.";
   unsigned char password[] = {1, 0};
 
-  printf("\nTest8 ======================================\n");
-  printf("Original phrase:\n");
-  printf("%s\n", phrase);
+  printf("\nTest8 ======================================\n"
+         "Original phrase:\n%s\n", phrase);
   jumble(phrase, password, ENCODE, 1);
 
-  printf("\nEncoded phrase:\n");
-  printf("%s\n", phrase);
+  printf("\nEncoded phrase:\n%s\n", phrase);
 
   jumble(phrase, password, DECODE, 1);
-  printf("\nDecoded back:\n");
-  printf("%s\n", phrase);
+  printf("\nDecoded back:\n%s\n", phrase);
 }
 
 void test9(void) {
@@ -167,34 +145,28 @@ void test9(void) {
                            "proposition that all men are created equal.";
   unsigned char *password = (unsigned char *)"foobar";
 
-  printf("\nTest9 ======================================\n");
-  printf("Original phrase:\n");
-  printf("%s\n", phrase);
+  printf("\nTest9 ======================================\n"
+         "Original phrase:\n%s\n", phrase);
   jumble(phrase, password, ENCODE, 3);
 
-  printf("\nEncoded phrase:\n");
-  printf("%s\n", phrase);
+  printf("\nEncoded phrase:\n%s\n", phrase);
 
   jumble(phrase, password, DECODE, 3);
-  printf("\nDecoded back:\n");
-  printf("%s\n", phrase);
+  printf("\nDecoded back:\n%s\n", phrase);
 }
 
 void test10(void) {
   unsigned char phrase[] = "batman";
   unsigned char password[] = "cave";
 
-  printf("\nTest10 ======================================\n");
-  printf("Original phrase:\n");
-  printf("%s\n", phrase);
+  printf("\nTest10 ======================================\n"
+         "Original phrase:\n%s\n", phrase);
   jumble(phrase, password, ENCODE, 2);
 
-  printf("\nEncoded phrase:\n");
-  printf("%s\n", phrase);
+  printf("\nEncoded phrase:\n%s\n", phrase);
 
   jumble(phrase, password, DECODE, 2);
-  printf("\nDecoded back:\n");
-  printf("%s\n", phrase);
+  printf("\nDecoded back:\n%s\n", phrase);
 }
 
 int main(void) {

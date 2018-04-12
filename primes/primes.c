@@ -1,7 +1,7 @@
 #include <stdio.h> /* printf */
 
 #define FALSE 0
-#define TRUE 1
+#define TRUE  1
 
 int is_prime(int number) {
   int i;
@@ -11,7 +11,7 @@ int is_prime(int number) {
     number *= -1;
   }
 
-    /* The number 2 is prime by definition. */
+    /* Two is prime by definition. */
   if (number == 2) {
     return TRUE;
   }

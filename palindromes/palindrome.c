@@ -1,13 +1,13 @@
-/******************************************************************************
+/*******************************************************************************
    Filename: palindrome.c
 
      Author: David C. Drake (http://davidcdrake.com)
 
 Description: Contains two functions for determining whether a given array of
              characters constitutes a palindrome.
-******************************************************************************/
+*******************************************************************************/
 
-/******************************************************************************
+/*******************************************************************************
    Function: is_palindrome1
 
 Description: Determines if an array of characters is a palindrome by means of
@@ -16,8 +16,8 @@ Description: Determines if an array of characters is a palindrome by means of
      Inputs: phrase - The array to be tested.
              length - Number of characters in the array.
 
-    Outputs: Returns 1 (true) if the phrase is a palindrome, 0 otherwise.
-******************************************************************************/
+    Outputs: Returns 1 if the phrase is a palindrome, 0 otherwise.
+*******************************************************************************/
 int is_palindrome1(const char phrase[], int length) {
   int i, j;
 
@@ -30,7 +30,7 @@ int is_palindrome1(const char phrase[], int length) {
   return 1;
 }
 
-/******************************************************************************
+/*******************************************************************************
    Function: is_palindrome2
 
 Description: Determines if an array of characters is a palindrome by means of
@@ -39,8 +39,8 @@ Description: Determines if an array of characters is a palindrome by means of
      Inputs: phrase - Pointer to the first character of the array.
              length - Number of characters in the array.
 
-    Outputs: Returns 1 (true) if the phrase is a palindrome, 0 otherwise.
-******************************************************************************/
+    Outputs: Returns 1 if the phrase is a palindrome, 0 otherwise.
+*******************************************************************************/
 int is_palindrome2(const char *phrase, int length) {
   const char *pChar1 = phrase,                 /* Pointer to first char. */
              *pChar2 = phrase + (length - 1);  /* Pointer to last char.  */

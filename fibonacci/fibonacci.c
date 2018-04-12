@@ -3,7 +3,7 @@
  * is between 2 and 46, inclusive.
  */
 
-#include <stdio.h> /* printf, scanf */
+#include <stdio.h>  /* printf, scanf */
 
 int main(void) {
   int n, i, fibonacciNumber, previousFibNum1, previousFibNum2;
@@ -17,8 +17,8 @@ int main(void) {
     }
   }while (n < 2 || n > 46);
 
-  printf("\n           Fibonacci        Fibonacci\n N           number        "
-         "  quotient\n-------------------------------------\n");
+  printf("\n           Fibonacci        Fibonacci\n N           number         "
+         " quotient\n-------------------------------------\n");
   printf("%2d%14d                  N/A\n", 0, 0);
   printf("%2d%14d                  N/A\n", 1, 1);
   previousFibNum2 = 0;

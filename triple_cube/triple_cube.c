@@ -1,4 +1,4 @@
-#include <stdio.h> /* printf */
+#include <stdio.h>  /* printf */
 
 #define MIN 100
 #define MAX 999

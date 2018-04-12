@@ -1,4 +1,4 @@
-#include <stdio.h> /* printf */
+#include <stdio.h>  /* printf */
 
 int is_prime(int n);
 void conjecture(int low, int high);

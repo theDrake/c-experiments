@@ -1,17 +1,17 @@
-/******************************************************************************
+/*******************************************************************************
    Filename: pi.c
 
      Author: David C. Drake (http://davidcdrake.com)
 
 Description: Contains two functions for approximating the value of pi:
              "circle_pi" and "leibniz_pi".
-******************************************************************************/
+*******************************************************************************/
 
 #include <math.h>      /* sqrt                */
 #define RADIUS 1.0     /* Used in circle_pi.  */
 #define NUMERATOR 1.0  /* Used in leibniz_pi. */
 
-/******************************************************************************
+/*******************************************************************************
    Function: circle_pi
 
 Description: Given a number of rectangles N, estimates the area of a quarter
@@ -23,7 +23,7 @@ Description: Given a number of rectangles N, estimates the area of a quarter
                           a quarter circle.
 
     Outputs: An approximation of the value of pi.
-******************************************************************************/
+*******************************************************************************/
 double circle_pi(int rectangles) {
   int i;
   double width = 0.0,
@@ -47,7 +47,7 @@ double circle_pi(int rectangles) {
   return piFourths * 4;  /* Approximation of pi. */
 }
 
-/******************************************************************************
+/*******************************************************************************
    Function: leibniz_pi
 
 Description: Given a number of iterations N, estimates the value of pi/4 (and
@@ -58,7 +58,7 @@ Description: Given a number of iterations N, estimates the value of pi/4 (and
                           algorithm. (Should actually be infinite, ideally).
 
     Outputs: An approximation of the value of pi.
-******************************************************************************/
+*******************************************************************************/
 double leibniz_pi(int iterations) {
   int counter = 1,
       denominator = 1;  /* For Leibniz's fractions. Always odd. */

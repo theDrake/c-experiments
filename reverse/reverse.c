@@ -1,8 +1,8 @@
 #include <string.h>
 
-#define BOOL int
+#define BOOL  int
 #define FALSE 0
-#define TRUE 1
+#define TRUE  1
 
 static BOOL IsWhitespace(const char c) {
   return c == ' ' || c == '\t' || c == '\n' || c == '\r';

@@ -1,7 +1,7 @@
 /*******************************************************************************
    Filename: spellcheck.c
 
-     Author: David C. Drake (http://davidcdrake.com)
+     Author: David C. Drake (https://davidcdrake.com)
 
 Description: Contains the following functions for analyzing and utilizing
              dictionary files: "words_starting_with", "word_lengths", "info",

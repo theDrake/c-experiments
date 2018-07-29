@@ -1,7 +1,7 @@
 /*******************************************************************************
    Filename: scantext.h
 
-     Author: David C. Drake (http://davidcdrake.com)
+     Author: David C. Drake (https://davidcdrake.com)
 
 Description: Function prototypes for "scantext.c".
 *******************************************************************************/

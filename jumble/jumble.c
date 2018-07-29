@@ -1,7 +1,7 @@
 /*******************************************************************************
    Filename: jumble.c
 
-     Author: David C. Drake (http://davidcdrake.com)
+     Author: David C. Drake (https://davidcdrake.com)
 
 Description: Contains two string-related functions: "mystrlen" and "jumble".
              The former determines the length of a given string, the latter

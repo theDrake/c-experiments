@@ -1,7 +1,7 @@
 /*******************************************************************************
    Filename: arrays.c
 
-     Author: David C. Drake (http://davidcdrake.com)
+     Author: David C. Drake (https://davidcdrake.com)
 
 Description: Contains five functions that use and/or modify arrays, including
              "reverse_array", "add_arrays", "scalar_multiply", "dot_product",

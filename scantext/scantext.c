@@ -1,7 +1,7 @@
 /*******************************************************************************
    Filename: scantext.c
 
-     Author: David C. Drake (http://davidcdrake.com)
+     Author: David C. Drake (https://davidcdrake.com)
 
 Description: Contains six functions: "is_whitespace", "mystrlen",
              "calculate_lengths", "count_words", count_tabs", and

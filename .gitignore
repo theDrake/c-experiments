@@ -12,7 +12,7 @@
 *.map
 *.exp
 
-# Precompiled headers
+# Precompiled Headers
 *.gch
 *.pch
 
@@ -50,15 +50,3 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
-
-# Stack dump
-*.stackdump
-
-# Windows
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-$RECYCLE.BIN/
-
-# Mac OS X
-.DS_Store
